@@ -18,3 +18,34 @@ Route::get('/', function () {
 Route::get('hello', function () {
     return view('hello');
 });
+
+Route::get('/profile', function () {
+    return view('profile');
+});
+
+Route::get('/page1', function () {
+    return view('page1');
+});
+
+
+Route::get('/main', function () {
+    return view('layouts.main');
+});
+
+Route::get('/page1', function () {
+    return view('page.page1');
+});
+
+Route::get('/page2', function () {
+    return view('page.page2');
+});
+
+Route::get('/page3', function () {
+    return view('page.page3');
+});
+
+Route::get('/page4', function () {
+    return view('page.page4');
+});
+
+
