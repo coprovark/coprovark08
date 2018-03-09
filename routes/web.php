@@ -37,7 +37,8 @@ Route::get('/page1', function () {
         "NAME" =>  "", 
         "A" =>      "",
         "ID"   =>  "",
-        "GEN"  => ""
+        "GEN"  => "",
+        "B" => ""
     ];
     return view('page.page1',$array);
 });
@@ -49,7 +50,6 @@ Route::get('/page2', function () {
 Route::get('/page3', function () {
     return view('page.page3');
 });
-
 Route::get('/page4', function () {
     return view('page.page4');
 });
@@ -61,13 +61,15 @@ Route::get('/page10/{id}', function ($id) {
     return view('page.page10',$array);
 });
 
+Route::get('/form_register', function () {
+    return view('page.form_register');
+});
 
-
-
-
-
-
+Route::get('/form_login', function () {
+    return view('page.form_login');
+});
 
 
 
 Route::post('/page','PageController@show');
+Route::post('/page9','PageController@show_select');
