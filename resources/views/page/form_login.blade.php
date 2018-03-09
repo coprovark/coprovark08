@@ -7,11 +7,10 @@
 
 <h1 class="page-header">เข้าสู่ระบบ</h1>
  <form>            
-                            <div class="form-group">
-                                   
-                                    <div class="form-inline" style="width:100%">           
-                                      <input type="text" class="form-control" placeholder="username" name="name" style="width:89%">
-                                    </div>
+                            <div class="form-group">            
+                            <label for="exampleInputPassword1">Username</label> 
+                                <input type="text" class="form-control" placeholder="username" name="name" >
+                            </div> 
                            
 
                             <div class="form-group">
