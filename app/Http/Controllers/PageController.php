@@ -13,7 +13,7 @@ class PageController extends Controller
     public function show(Request $request)
     {
 
-        $txtname = $request->input('name');
+        $txtname = $request->input('a');
         $txtcheckbox = $request->input('checkbox');
         $txtpassword = $request->input('password');
         $txtradio = $request->input('radio');
@@ -36,4 +36,17 @@ class PageController extends Controller
     public function show_select(Request $res){
         return view('page.page9',$res);
     }
+
+    public function Login(Request $request)
+    {
+        $txtUser = $request->input('user');
+        $txtPassword = $request->input('password');
+        $data = ["USER"=>$txtUser,"PASSWORD"=>$txtPassword];
+        return view('page.form_login',$data);
+    }
 }
+
+    
+   
+
+    

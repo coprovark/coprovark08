@@ -66,10 +66,10 @@ Route::get('/form_register', function () {
 });
 
 Route::get('/form_login', function () {
-    return view('page.form_login');
+    $data = ["USER"=>"",'PASSWORD'=>""];
+    return view('page.form_login',$data);
 });
-
-
 
 Route::post('/page','PageController@show');
 Route::post('/page9','PageController@show_select');
+Route::post('/page','PageController@Login');

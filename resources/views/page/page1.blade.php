@@ -9,7 +9,7 @@
 <form action="/page" method="post">
 
 
-    <input type="text" name="name"><br>
+    <input type="text" name="a"><br>
 
     
      <input type="checkbox" name="checkbox" value="10">10 บาท <br> 
