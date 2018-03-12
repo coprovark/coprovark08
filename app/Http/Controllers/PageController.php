@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\page;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller
 {
@@ -37,13 +38,41 @@ class PageController extends Controller
         return view('page.page9',$res);
     }
 
-    public function Login(Request $request)
-    {
-        $txtUser = $request->input('user');
-        $txtPassword = $request->input('password');
-        $data = ["USER"=>$txtUser,"PASSWORD"=>$txtPassword];
-        return view('page.form_login',$data);
+    public function  Login(Request $res1){
+        $users = DB::select('select * from users where username = ? and password =? ',
+         [$res1['username'],$res1['password']]
+        );  
+       return view('page.form_login',['users'=>$users]);
     }
+
+    public function  form_check_login(Request $res){
+        $users = DB::select('select * from users where username = ? and password =? ',
+         [$res['username'],$res['password']]
+        );  
+       return view('page.form_check_login',['users'=>$users]);
+    }
+
+    // form_login2
+   public function form_login2(Request $res){
+
+         $users = DB::table('users')->where([
+             ['username','=',$res['username']],
+             ['password','=',$res['password']],
+             ])->get();
+
+             $name='';
+             foreach($users as $value ){
+                 $name = $value->id;
+             }
+             $res['name']=$name;
+
+//----------------------------------------------View--------------------------------------------------
+
+
+
+    return view('page.form_login',$res);
+    }
+  
 }
 
     
