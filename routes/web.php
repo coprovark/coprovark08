@@ -111,3 +111,19 @@ Route::post('/form_login2','PageController@form_login2');//จะทำงาน
 //     return view('/page.list_user',);
 // });
 Route ::get('/list_user','UsersController@list_user');
+
+
+//---------------------------ลบ-------------------------------------
+Route::get('delete_user/{id}', function ($id) {
+    return 'User = '.$id;
+});
+Route ::get('delete_user/{id}','UsersController@delete_users');
+//--------------------------------------------------------------------
+
+//-------------------------เพิ่ม-------------------------------------
+Route::post('/form_register_save','UsersController@form_register_save');
+//--------------------------------------------------------------------
+
+//--------------------------------------------------------------------
+Route::post('/list_users_find','UsersController@list_users_find');
+//--------------------------------------------------------------------
