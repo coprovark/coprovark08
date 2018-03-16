@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main2')
 
 @section('content')
         <form action="/form_login2" method="post" style="font-size : 15px">
@@ -11,7 +11,7 @@
                 <input type="password" name="password" class="form-control" style="width : 300px" placeholder="Password">
             </div>
                 <button type="submit" class="btn btn-info">เข้าสู่ระบบ</button>
-                <a type="button" href="/form_register" class="btn btn-warning">สมัครสมาชิก</a>
+                <a type="button" href="/form_register2" class="btn btn-warning">สมัครสมาชิก</a>
                             
                             
             </center>                 

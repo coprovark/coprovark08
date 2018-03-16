@@ -53,25 +53,25 @@ class PageController extends Controller
     }
 
     // form_login2
-   public function form_login2(Request $res){
+//    public function form_login2(Request $res){
 
-         $users = DB::table('users')->where([
-             ['username','=',$res['username']],
-             ['password','=',$res['password']],
-             ])->get();
+//          $users = DB::table('users')->where([
+//              ['username','=',$res['username']],
+//              ['password','=',$res['password']],
+//              ])->get();
 
-             $name='';
-             foreach($users as $value ){
-                 $name = $value->id;
-             }
-             $res['name']=$name;
+//              $name='';
+//              foreach($users as $value ){
+//                  $name = $value->id;
+//              }
+//              $res['name']=$name;
 
-//----------------------------------------------View--------------------------------------------------
+// //----------------------------------------------View--------------------------------------------------
 
 
 
-    return view('page.form_login',$res);
-    }
+//     return view('page.form_login',$res);
+//     }
   
 }
 

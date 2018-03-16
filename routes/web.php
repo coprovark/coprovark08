@@ -97,14 +97,14 @@ Route::post('/page9','PageController@show_select');
 
 
 
-Route::get('/form_login2', function () {
-    $data = ['username' => '',
-              'name' =>''
-            ];
+// Route::get('/form_login2', function () {
+//     $data = ['username' => '',
+//               'name' =>''
+//             ];
 
-    return view('page.form_login',$data);
-});
-Route::post('/form_login2','PageController@form_login2');//จะทำงานก็่อเมื่อเรากดปุ่ม submit
+//     return view('page.form_login',$data);
+// });
+// Route::post('/form_login2','PageController@form_login2');//จะทำงานก็่อเมื่อเรากดปุ่ม submit
 
 
 // Route::get('/list_users', function () {
@@ -114,16 +114,57 @@ Route ::get('/list_user','UsersController@list_user');
 
 
 //---------------------------ลบ-------------------------------------
-Route::get('delete_user/{id}', function ($id) {
-    return 'User = '.$id;
-});
-Route ::get('delete_user/{id}','UsersController@delete_users');
+// Route::get('delete_user/{id}', function ($id) {
+//     return 'User = '.$id;
+// });
+// Route ::get('delete_user/{id}','UsersController@delete_users');
 //--------------------------------------------------------------------
 
 //-------------------------เพิ่ม-------------------------------------
-Route::post('/form_register_save','UsersController@form_register_save');
+// Route::post('/form_register_save','UsersController@form_register_save');
 //--------------------------------------------------------------------
 
 //--------------------------------------------------------------------
-Route::post('/list_users_find','UsersController@list_users_find');
+// Route::post('/list_users_find','UsersController@list_users_find');
 //--------------------------------------------------------------------
+
+
+
+
+
+//--------------------------หน้าform2------------------------------------
+Route::get('/form_register2', function () {
+    return view('page.form_register2');
+});
+//----------------------------------------------------------------------
+
+//-----------------------------หน้าlist2-----------------------------------
+Route ::get('/list_user2','Users2Controller@list_user2');
+//------------------------------------------------------------------------
+
+//---------------------------ค้นหา2----------------------------------------
+Route::post('/list_users_find2','Users2Controller@list_users_find2');
+//-----------------------------------------------------------------------
+
+//----------------------------ลบข้อมูล2------------------------------------
+Route::get('delete_user/{id}', function ($id) {
+    return 'User = '.$id;
+});
+Route ::get('delete_user/{id}','Users2Controller@delete_users2');
+//-----------------------------------------------------------------------
+
+//-------------------------------เพิ่มข้อมูล2-------------------------------
+Route::post('/form_register_save2','Users2Controller@form_register_save2');
+//-----------------------------------------------------------------------
+
+//-------------------------------------------------------------------------
+
+Route::get('/form_login2', function () {
+    $data = ['username' => '',
+              'name' =>''
+            ];
+
+    return view('page.form_login',$data);
+});
+Route::post('/form_login2','Users2Controller@form_login2');//จะทำงานก็่อเมื่อเรากดปุ่ม submit
+//------------------------------------------------------------------------
